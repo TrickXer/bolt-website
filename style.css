@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e2124;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.topPage {
+    position: relative;
+    right: 120px;
+}
+
+.boltdp {
+    border-radius: 50%;
+    max-width: 100px;
+    max-height: 100px;
+    position: absolute;
+    border: 3px solid rgb(20, 118, 61);
+    top: 50px;
+    left: 10%;
+}
+
+.boltdp:hover {
+    border: 5px solid rgb(20, 118, 61);
+    transition: .2s ease-in-out;
+    transform: scale(1.1);
+}
+
+.pages {
+    position: absolute;
+    max-width: fit-content;
+    max-height: fit-content;
+    left: 16%;
+    top: 100px;
+}
+
+#home, #about, #changelog, #commands {
+    background-color: transparent;
+    padding: 14px 21px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#home:hover, #about:hover, #changelog:hover, #commands:hover {
+    transition: .2s ease-in-out;
+    color: blueviolet;
+}
+
+.invite {
+    position: absolute;
+    left: 46%;
+    top: 650px;
+    font-size: 200%;
+    background-color: transparent;
+    border: 3px solid rgb(20, 118, 61);
+    padding: 14px 14px;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+.invite:hover {
+    transform: scale(1.1);
+    transition: all ease 500ms;
+    background-color: rgb(20, 118, 61);
+}
