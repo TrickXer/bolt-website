@@ -40,7 +40,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div ons className='app'>
+      <div className='app'>
         <header>
           <Navbar theme={theme} />
         </header>

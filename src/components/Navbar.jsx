@@ -40,7 +40,7 @@ export default function Navbar(props) {
     return (
         <ThemeProvider theme={props.theme}>
             <Toolbar sx={{ backgroundColor: 'transparent', display: 'grid', gridTemplateColumns: '33% 33% 33%' }}>
-                <Typography sx={{ opacity: visibility ? 1 : 0, transform: visibility ? 'translate(0)' : 'translateY(10px)', transition: 'all 300ms ease-in-out' }} ml='2.8em' variant='h2'>Bolt</Typography>
+                <Typography sx={{ opacity: visibility ? 1 : 0, transform: visibility ? 'translate(0)' : 'translateY(15px)', transition: 'all 300ms ease-in-out' }} ml='2.8em' variant='h2'>Bolt</Typography>
                 <StyledTabs value={value} onChange={handleChange} sx={{ display: 'flex', justifySelf: 'center' }}>
                     {
                         tabs.map((tab, id) => (
