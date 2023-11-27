@@ -18,10 +18,10 @@ export default function Home(props) {
 
     return (
         <ThemeProvider theme={theme}>
-            <Box sx={{ p: '6em 12em', display: 'flex', justifyContent: 'center' }}>
+            <Box id='home' sx={{ p: '6em 12em', display: 'flex', justifyContent: 'center' }}>
                 <Box sx={{ flex: '1 0 auto' }}>
                     <Typography sx={{ opacity: !visibility ? 1 : 0, transform: !visibility ? 'translateY(0)' : 'translateY(-50px)', transition: 'all 300ms ease-in-out' }} id='bolt-header' variant='h1'>Bolt</Typography>
-                    <Typography sx={{ WebkitTextStroke: '1px white', WebkitTextFillColor: 'black' }} variant='h2'>Discord Bot</Typography>
+                    <Typography sx={{ WebkitTextStroke: '1px white', WebkitTextFillColor: 'transparent' }} variant='h2'>Discord Bot</Typography>
 
                     <Button sx={{
                         mt: '1em', textTransform: 'capitalize', letterSpacing: '.125em', color: 'inherit', backgroundColor: 'red',

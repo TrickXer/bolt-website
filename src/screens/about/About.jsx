@@ -5,7 +5,7 @@ export default function About(props) {
     
 
     return (
-        <Box>
+        <Box id='about'>
             <Typography>About Us</Typography>
         </Box>
     )
