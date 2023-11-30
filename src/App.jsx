@@ -20,6 +20,11 @@ export default function App() {
         fontSize: '14px',
         color: 'lightgray',
       },
+      subtitle2: {
+        fontWeight: 500,
+        fontSize: '16px',
+        color: 'gray',
+      },
       h1: {
         fontWeight: 600,
         color: 'white',
@@ -34,7 +39,7 @@ export default function App() {
       h3: {
         color: 'white',
         textTransform: 'capitalize'
-      }
+      },
     },
   })
 
