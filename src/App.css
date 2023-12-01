@@ -13,12 +13,14 @@
 }
 
 .container {
-  height: calc(100vh - 72px);
+  width: 100vw;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  height: calc(100vh - 72px);
 }
 
 .container > div {
+  width: 100%;
   min-height: calc(100vh - 72px);
 }
 

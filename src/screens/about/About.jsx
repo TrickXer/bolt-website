@@ -6,6 +6,7 @@ import GmailColor from '../../resource/gmail-color.svg';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { Box, Button, TextField, Typography } from '@mui/material'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import CountUp from '../../components/CountUp';
 
 export default function About(props) {
     
@@ -30,11 +31,29 @@ export default function About(props) {
         })
     )
 
+    const countUps = [
+        {
+            name: 'servers',
+            counts: 124
+        },
+        {
+            name: 'commands',
+            secondary: 'used',
+            counts: 10144
+        },
+    ]
+
     return (
         <Box id='about'>
-            <Typography mt='2em' mb='2em' variant='h2' textAlign='center'>Contact</Typography>
-
-            <Box component='form' display='flex' justifyContent='center' alignItems='center' height='56px'>
+            <Box mt='2em' display='flex' justifyContent='center' gap='300px' alignItems='center'>
+                {
+                    countUps.map((countUp, id) => (
+                        <CountUp countUp={countUp} key={id} />
+                    ))
+                }
+            </Box>
+            {/* <Typography mt='3em'  variant='h2' textAlign='center'>Contact</Typography> */}
+            <Box mt='10em' component='form' display='flex' justifyContent='center'  alignItems='center' height='56px'>
                 <TextField sx={{
                     width: '30em', height: '100%',
                     '&:hover fieldset': {
@@ -48,7 +67,7 @@ export default function About(props) {
                 }} required />
                 <Button type='submit' variant='contained' sx={{ height: '100%' }} endIcon={<KeyboardArrowRightIcon />} >submit</Button>
             </Box>
-            <Box mt='6em' display='flex' justifyContent='center' gap='18px' alignItems='center'>
+            <Box mt='4em' display='flex' justifyContent='center' gap='18px' alignItems='center'>
                 <FooterBox to='https://www.instagram.com/_trickxer_/'>
                     <InstagramIcon className='InstaIconHover' sx={{
                         p: '1px',
@@ -58,11 +77,6 @@ export default function About(props) {
                     <Typography className='TextHover' variant='subtitle2'>Instagram</Typography>
                 </FooterBox>
                 <FooterBox to='mailto:kingkrabby10@gmail.com'>
-                    {/* <MailIcon className='InstaIconHover' sx={{
-                        p: '1px',
-                        color: 'gray',
-                        borderRadius: '4px'
-                    }} /> */}
                     <img className='EmailIconHover' src={Gmail} alt='' />
                     <Typography className='TextHover' variant='subtitle2'>Gmail</Typography>
                 </FooterBox>

@@ -18,8 +18,8 @@ export default function Home(props) {
 
     return (
         <ThemeProvider theme={theme}>
-            <Box id='home' sx={{ p: '6em 12em', display: 'flex', justifyContent: 'center' }}>
-                <Box sx={{ flex: '1 0 auto' }}>
+            <Box id='home' sx={{ p: '6em 3em', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+                <Box sx={{ flex: '1 0 auto', ml: '6em' }}>
                     <Typography sx={{ opacity: !visibility ? 1 : 0, transform: !visibility ? 'translateY(0)' : 'translateY(-50px)', transition: 'all 300ms ease-in-out' }} id='bolt-header' variant='h1'>Bolt</Typography>
                     <Typography sx={{ WebkitTextStroke: '1px white', WebkitTextFillColor: 'transparent' }} variant='h2'>Discord Bot</Typography>
 
@@ -33,9 +33,8 @@ export default function Home(props) {
                         Bolt is a computer program designed to automate, enhance, or perform various functions within the Discord messaging platform. Developed by TrixR, this bot can carry out tasks ranging from moderation and utility functions to entertainment and customization. It respond to specific commands from users, interact with Discord's API, and can be invited to servers to assist with tasks, provide information, or engage in interactive activities. Bolt contribute to the versatility and richness of Discord communities, offering features that go beyond the platform's built-in capabilities.
                     </Typography>
                 </Box>
-
                 <Paper sx={{
-                    p: '42px', flex: '1 1 auto', width: '900px', height: 'auto',
+                    mr: '6em', p: '2em', flex: '1 1 auto', width: '35em', aspectRatio: '16 / 9', 
                     display: 'flex', justifyContent: 'center', alignItems: 'center',
                     backgroundColor: 'transparent', backdropFilter: 'blur(2.4px)',
                     background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent)',
@@ -43,7 +42,7 @@ export default function Home(props) {
                     boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
                     transform: 'perspective(1000px) rotateY(-25deg) rotateX(10deg)'
                 }} elevation={0}>
-                    <img style={{ width: '100%', height: 'auto', objectFit: 'contain', objectPosition: 'center', borderRadius: '15px' }} src={boltDemo} alt='bolt_demo.png' />
+                    <img style={{ width: '100%', objectFit: 'contain', objectPosition: 'center', borderRadius: '15px' }} src={boltDemo} alt='bolt_demo.png' />
                 </Paper>
             </Box>
         </ThemeProvider>

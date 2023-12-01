@@ -40,7 +40,7 @@ export default function Navbar(props) {
 
         setTimeout(() => {
             dispatch(setCanChange(true))
-        }, 500);
+        }, 1000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch, value, canChange])
 
