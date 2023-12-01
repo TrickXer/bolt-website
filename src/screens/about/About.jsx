@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Gmail from '../../resource/gmail.svg';
 import { styled } from '@mui/material/styles';
-import MailIcon from '@mui/icons-material/Mail';
 import GmailColor from '../../resource/gmail-color.svg';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { Box, Button, TextField, Typography } from '@mui/material'
