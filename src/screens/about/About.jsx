@@ -1,11 +1,35 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import Gmail from '../../resource/gmail.svg';
+import { styled } from '@mui/material/styles';
+import MailIcon from '@mui/icons-material/Mail';
+import GmailColor from '../../resource/gmail-color.svg';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { Box, Button, TextField, Typography } from '@mui/material'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { Link } from 'react-router-dom';
 
 export default function About(props) {
     
+    const FooterBox = styled((props) => <Box component={Link} target='_blank' display='flex' gap='6px' alignItems='center' {...props} />)(
+        ({ theme }) => ({
+            textDecoration: 'none',
+            '&:hover': {
+                '& .InstaIconHover': {
+                    color: 'white',
+                    transition: 'all 150ms ease-in-out',
+                    background: 'linear-gradient(135deg, #4f5bd5, #962fbf, #d62976, #fa7e1e, #feda75)',
+                },
+                '& .EmailIconHover': {
+                    content: `url(${GmailColor})`,
+                    transition: 'all 150ms ease-in-out',
+                },
+                '& .TextHover': {
+                    color: 'white',
+                    transition: 'all 150ms ease-in-out',
+                },
+            },
+        })
+    )
 
     return (
         <Box id='about'>
@@ -25,11 +49,24 @@ export default function About(props) {
                 }} required />
                 <Button type='submit' variant='contained' sx={{ height: '100%' }} endIcon={<KeyboardArrowRightIcon />} >submit</Button>
             </Box>
-            <Box mt='6em' display='flex' justifyContent='center' alignItems='center'>
-                <Box component={Link} target='_blank' to='https://www.instagram.com/_trickxer_/' sx={{ textDecoration: 'none' }} display='flex' gap='6px' alignItems='center'>
-                    <InstagramIcon sx={{ color: 'gray' }} />
-                    <Typography variant='subtitle2'>Instagram</Typography>
-                </Box>
+            <Box mt='6em' display='flex' justifyContent='center' gap='18px' alignItems='center'>
+                <FooterBox to='https://www.instagram.com/_trickxer_/'>
+                    <InstagramIcon className='InstaIconHover' sx={{
+                        p: '1px',
+                        color: 'gray',
+                        borderRadius: '4px'
+                    }} />
+                    <Typography className='TextHover' variant='subtitle2'>Instagram</Typography>
+                </FooterBox>
+                <FooterBox to='mailto:kingkrabby10@gmail.com'>
+                    {/* <MailIcon className='InstaIconHover' sx={{
+                        p: '1px',
+                        color: 'gray',
+                        borderRadius: '4px'
+                    }} /> */}
+                    <img className='EmailIconHover' src={Gmail} alt='' />
+                    <Typography className='TextHover' variant='subtitle2'>Gmail</Typography>
+                </FooterBox>
             </Box>
         </Box>
     )

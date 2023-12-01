@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from '@mui/material/styles'
-import { Tab, Tabs, ThemeProvider, Toolbar, Typography } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
+import { Tab, Tabs, Toolbar, Typography } from '@mui/material'
 import { setCanChange, setValue } from '../redux/reducers/sections'
 
 export default function Navbar(props) {
@@ -45,21 +45,19 @@ export default function Navbar(props) {
     }, [dispatch, value, canChange])
 
     return (
-        <ThemeProvider theme={props.theme}>
-            <Toolbar sx={{ backgroundColor: 'transparent', display: 'grid', gridTemplateColumns: '33% 33% 33%' }}>
-                <Typography sx={{
-                    opacity: visibility ? 1 : 0,
-                    transition: 'all 300ms ease-in-out',
-                    transform: visibility ? 'translateY(0)' : 'translateY(15px)',
-                }} ml='2.8em' variant='h2'>Bolt</Typography>
-                <StyledTabs value={value} onClick={() => dispatch(setCanChange(false))} onChange={handleChange} sx={{ display: 'flex', justifySelf: 'center' }}>
-                    {
-                        tabs.map((tab, id) => (
-                            <StyledTab key={id} label={tab} />
-                        ))
-                    }
-                </StyledTabs>
-            </Toolbar>
-        </ThemeProvider>
+        <Toolbar sx={{ backgroundColor: 'transparent', display: 'grid', gridTemplateColumns: '33% 33% 33%' }}>
+            <Typography sx={{
+                opacity: visibility ? 1 : 0,
+                transition: 'all 300ms ease-in-out',
+                transform: visibility ? 'translateY(0)' : 'translateY(15px)',
+            }} ml='2.8em' variant='h2'>Bolt</Typography>
+            <StyledTabs value={value} onClick={() => dispatch(setCanChange(false))} onChange={handleChange} sx={{ display: 'flex', justifySelf: 'center' }}>
+                {
+                    tabs.map((tab, id) => (
+                        <StyledTab key={id} label={tab} />
+                    ))
+                }
+            </StyledTabs>
+        </Toolbar>
     )
 }
