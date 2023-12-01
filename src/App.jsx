@@ -10,6 +10,14 @@ import { setValue } from './redux/reducers/sections';
 
 export default function App() {
   const theme = createTheme({
+    breakpoints: {
+      values: {
+        mb: 0,
+        tb: 600,
+        lp: 1200,
+        dp: 1600
+      }
+    },
     palette: {
       mode: 'dark',
     },
@@ -68,12 +76,12 @@ export default function App() {
       <CssBaseline />
       <div className='app'>
         <header>
-          <Navbar theme={theme} />
+          <Navbar />
         </header>
 
         <div onScroll={handleScroll} className="container">
           <div id='home'>
-            <Home theme={theme} />
+            <Home />
           </div>
           <div id='features'>
             <Features />
