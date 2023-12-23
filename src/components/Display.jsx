@@ -19,7 +19,7 @@ export default function Display(props) {
                 })
             }>{props.title}</Typography>
             <Box sx={{ position: 'relative', width: '100%', display: 'inline-flex', flexDirection: props.id % 2 === 0 ? 'row' : 'row-reverse' }}>
-                <hr style={{
+                <hr className='LineHover' style={{
                     margin: 0,
                     border: 0,
                     padding: 0,
@@ -29,7 +29,7 @@ export default function Display(props) {
                     background: `linear-gradient(${props.id % 2 === 0 ? 90 : 270 }deg, transparent 25%, red)`
                 }} />
 
-                <hr style={{
+                <hr className='LineHover' style={{
                     margin: 0,
                     border: 0,
                     padding: 0,
@@ -43,7 +43,7 @@ export default function Display(props) {
                     transform: `rotate(${props.id % 2 === 0 ? -45 : 45 }deg)`
                 }} />
 
-                <hr style={{
+                <hr className='LineHover' style={{
                     margin: 0,
                     border: 0,
                     padding: 0,
@@ -69,8 +69,22 @@ export default function Display(props) {
                     transform: `translate(${(Math.pow(-1, props.id)) * (50 / Math.sqrt(2))}px, -38.5px)`
                 }} />
             </Box>
-            <Box sx={{ width: '100%', display: 'flex', flexDirection: props.id % 2 === 0 ? 'row' : 'row-reverse', }}>
-                <Paper sx={
+            <Box sx={
+                (theme) => ({
+                    width: '100%', display: 'flex', flexDirection: props.id % 2 === 0 ? 'row' : 'row-reverse',
+                    '&:hover': {
+                        '& .CardHover': {
+                            transform: 'rotateY(0deg) rotateX(0deg)',
+                            transition: 'all 200ms ease-in-out'
+                        },
+                        '& .LineHover': {
+                            background: 'transparent',
+                            transition: 'all 200ms ease-in-out'
+                        }
+                    }
+                })
+             }>
+                <Paper className='CardHover' sx={
                     (theme) => ({
                         display: 'flex', justifyContent: 'center', alignItems: 'center',
                         p: '1.25em', width: '18.75em', height: 'auto',
